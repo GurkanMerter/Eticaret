@@ -1,0 +1,224 @@
+﻿@{
+    string[] TabloBaslik = new string[] { "tanim", "resimURL" };
+}
+
+<!doctype html>
+<html>
+<head>
+    <title>Website menu 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <link href="~/Content/style2.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/main.js"></script>
+    <script src="Scripts/popper.js"></script>
+
+    @*tablo için*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/animatetable.css" rel="stylesheet" />
+    <link href="~/Content/tablemain.css" rel="stylesheet" />
+    <link href="~/Content/util.css" rel="stylesheet" />
+
+</head>
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Website menu #02</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col">
+                    <a class="navbar-brand" href="index.html">Papermag <span>Magazine</span></a>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <div class="social-media">
+                        <p class="mb-0 d-flex">
+                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span> Menu
+                </button>
+
+                <form action="SearchAndFind" class="searchform order-lg-last" method="post">
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control pl-3" placeholder="Search" name="tanim">
+                        <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+                    </div>
+                </form>
+
+
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="#">Page 1</a>
+                                <a class="dropdown-item" href="#">Page 2</a>
+                                <a class="dropdown-item" href="#">Page 3</a>
+                                <a class="dropdown-item" href="#">Page 4</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">Catalog</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END nav -->
+
+        <div class="table100 ver3 m-b-110">
+
+            <table data-vertable="ver3" style="width:100%">
+                <thead>
+
+                    <tr class="row100 head">
+                        <th class="column100 column1" data-column="column1" style="width:40%">Ürün İsmi </th>
+                        <th class="column100 column2" data-column="column2" style="width:60%">Ürün Resmi</th>
+                        @*<th class="column100 column3" data-column="column3">Monday</th>
+                            <th class="column100 column4" data-column="column4">Tuesday</th>
+                            <th class="column100 column5" data-column="column5">Wednesday</th>
+                            <th class="column100 column6" data-column="column6">Thursday</th>
+                            <th class="column100 column7" data-column="column7">Friday</th>
+                            <th class="column100 column8" data-column="column8">Saturday</th>*@
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @*@{ 
+                                if(Model != null)
+                                {
+                                    foreach(var Data in Model)
+                                    { 
+                                        <tr class="row100">
+                             <td class="column100 column1" data-column="column1">@Data.tanim</td>
+                             <td> <img src="@Data.resimURL"/></td>
+                                        </tr>
+                            }
+                        }
+                    }*@
+                </tbody>
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+</body>
+</html>
+<!--
+<tr class="row100">
+                        <td class="column100 column1" data-column="column1">Lawrence Scott</td>
+                        <td class="column100 column2" data-column="column2">8:00 AM</td>
+                        @*<td class="column100 column3" data-column="column3">--</td>
+                <td class="column100 column4" data-column="column4">--</td>
+                <td class="column100 column5" data-column="column5">8:00 AM</td>
+                <td class="column100 column6" data-column="column6">--</td>
+                <td class="column100 column7" data-column="column7">5:00 PM</td>
+                <td class="column100 column8" data-column="column8">8:00 AM</td>*@
+                    </tr>
+
+                    <tr class="row100">
+                        <td class="column100 column1" data-column="column1">Jane Medina</td>
+                        <td class="column100 column2" data-column="column2">--</td>
+                        @*<td class="column100 column3" data-column="column3">5:00 PM</td>
+                <td class="column100 column4" data-column="column4">5:00 PM</td>
+                <td class="column100 column5" data-column="column5">--</td>
+                <td class="column100 column6" data-column="column6">9:00 AM</td>
+                <td class="column100 column7" data-column="column7">--</td>
+                <td class="column100 column8" data-column="column8">--</td>*@
+                    </tr>
+
+                    <tr class="row100">
+                        <td class="column100 column1" data-column="column1">Billy Mitchell</td>
+                        <td class="column100 column2" data-column="column2">9:00 AM</td>
+                        @*<td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">2:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>*@
+                    </tr>
+
+                    <tr class="row100">
+                        <td class="column100 column1" data-column="column1">Beverly Reid</td>
+                        <td class="column100 column2" data-column="column2">--</td>
+                        @*<td class="column100 column3" data-column="column3">5:00 PM</td>
+                <td class="column100 column4" data-column="column4">5:00 PM</td>
+                <td class="column100 column5" data-column="column5">--</td>
+                <td class="column100 column6" data-column="column6">9:00 AM</td>
+                <td class="column100 column7" data-column="column7">--</td>
+                <td class="column100 column8" data-column="column8">--</td>*@
+                    </tr>
+
+                    <tr class="row100">
+                        <td class="column100 column1" data-column="column1">Tiffany Wade</td>
+                        <td class="column100 column2" data-column="column2">8:00 AM</td>
+                        @*<td class="column100 column3" data-column="column3">--</td>
+                <td class="column100 column4" data-column="column4">--</td>
+                <td class="column100 column5" data-column="column5">8:00 AM</td>
+                <td class="column100 column6" data-column="column6">--</td>
+                <td class="column100 column7" data-column="column7">5:00 PM</td>
+                <td class="column100 column8" data-column="column8">8:00 AM</td>*@
+                    </tr>
+
+                    <tr class="row100">
+                        <td class="column100 column1" data-column="column1">Sean Adams</td>
+                        <td class="column100 column2" data-column="column2">--</td>
+                        @*<td class="column100 column3" data-column="column3">5:00 PM</td>
+                <td class="column100 column4" data-column="column4">5:00 PM</td>
+                <td class="column100 column5" data-column="column5">--</td>
+                <td class="column100 column6" data-column="column6">9:00 AM</td>
+                <td class="column100 column7" data-column="column7">--</td>
+                <td class="column100 column8" data-column="column8">--</td>*@
+                    </tr>
+
+                    <tr class="row100">
+                        <td class="column100 column1" data-column="column1">Rachel Simpson</td>
+                        <td class="column100 column2" data-column="column2">9:00 AM</td>
+                        @*<td class="column100 column3" data-column="column3">--</td>
+                <td class="column100 column4" data-column="column4">--</td>
+                <td class="column100 column5" data-column="column5">--</td>
+                <td class="column100 column6" data-column="column6">--</td>
+                <td class="column100 column7" data-column="column7">2:00 PM</td>
+                <td class="column100 column8" data-column="column8">8:00 AM</td>*@
+                    </tr>
+
+                    <tr class="row100">
+                        <td class="column100 column1" data-column="column1">Mark Salazar</td>
+                        <td class="column100 column2" data-column="column2">8:00 AM</td>
+                        @*<td class="column100 column3" data-column="column3">--</td>
+                <td class="column100 column4" data-column="column4">--</td>
+                <td class="column100 column5" data-column="column5">8:00 AM</td>
+                <td class="column100 column6" data-column="column6">--</td>
+                <td class="column100 column7" data-column="column7">5:00 PM</td>
+                <td class="column100 column8" data-column="column8">8:00 AM</td>*@
+                    </tr>
+-->

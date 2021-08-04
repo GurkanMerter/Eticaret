@@ -1,0 +1,53 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/material-design-iconic-font.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div class="main">
+
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Üye Ol</h2>
+                        <form method="POST" class="register-form" id="register-form" action="Register">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="Ad" id="name" placeholder="Ad" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="SoyAd" id="name" placeholder="Soy Ad" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="Eposta" id="email" placeholder="E-posta" />
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="Sifre" id="pass" placeholder="Şifre" />
+                            </div>
+                           
+                            <div class="form-group form-button"><a href="/Home/SignIn"><input type="submit" name="signup" id="signup" class="form-submit" value="Üye Ol" /></a>
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="~/images/logo.jpg" alt="sing up image"></figure>
+                        <a href="/Home/SignIn" class="signup-image-link">Bir hesabım var</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
