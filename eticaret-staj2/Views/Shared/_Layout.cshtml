@@ -9,6 +9,45 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span> Menu
+            </button>
+
+            <form action="Search" class="searchform order-lg-last" method="post">
+                <div class="form-group d-flex">
+                    <input type="text" class="form-control pl-3" placeholder="Aradığınız ürün veya marka" name="tanim">
+                    <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+                </div>
+            </form>
+
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a href="#" class="nav-link">Ana Sayfa</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategoriler</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="#">Page 1</a>
+                            <a class="dropdown-item" href="#">Page 2</a>
+                            <a class="dropdown-item" href="#">Page 3</a>
+                            <a class="dropdown-item" href="#">Page 4</a>
+                        </div>
+                    </li>
+                    @*@if (User.IsInRole("true"))
+                          {
+                        <li class="nav-item"><a href="/Home/PersonelUrunEkle" class="nav-link">Urun Ekleme</a></li>
+                          }*@
+                    <li class="nav-item"><a href="/Home/PersonelUrunEkle" class="nav-link">Urun Ekleme</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">İletişim</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Profil</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
     <!-- <div class="navbar navbar-inverse navbar-fixed-top">
          <div class="container">
              <div class="navbar-header">
@@ -29,7 +68,7 @@
          </div>
      </div>
     <div class="container body-content">
-        @RenderBody()
+       
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - ASP.NET Uygulamam</p>

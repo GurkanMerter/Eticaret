@@ -1,0 +1,158 @@
+﻿@{
+    string[] TabloBaslik = new string[] { "id","tanim", "resimURL","markaID" };
+}
+
+<!doctype html>
+<html>
+<head>
+    <title>Ana Sayfa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/style2.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/main.js"></script>
+    <script src="Scripts/popper.js"></script>
+    @*tablo için*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/animatetable.css" rel="stylesheet" />
+    <link href="~/Content/tablemain.css" rel="stylesheet" />
+    <link href="~/Content/util.css" rel="stylesheet" />
+    @* dropdownwithsearch *@
+    <script src="~/Scripts/chosen.jquery.min.js"></script>
+    <link href="~/Content/Chosen/chosen.min.css" rel="stylesheet" />
+    <link href="~/Content/Chosen/selectboxes.css" rel="stylesheet" />   
+    
+    <script>
+        function UrunDuzenle(id) {
+            window.location.href = '@Url.Action("UrunDuzenle","Home")' + "?urunid=" + id;
+        }
+    </script>
+
+</head>
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Hadi Al Elektronik</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col">
+                    <a class="navbar-brand" href="/Home/PersonelYetkiliSayfa">Personel<span>Sayfası</span></a>
+                </div>
+                <div class="col d-flex justify-content-end">
+
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span> Menu
+                </button>
+
+                <form action="PersonelYetkiliSayfa" class="searchform order-lg-last" method="post">
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control pl-3" placeholder="Aradığınız ürün veya marka" name="tanim">
+                        <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+                    </div>
+                </form>
+
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav mr-auto">
+                        @*@if (User.IsInRole("true"))
+                          {
+                        <li class="nav-item"><a href="/Home/PersonelUrunEkle" class="nav-link">Urun Ekleme</a></li>
+                          }*@
+                        <li class="nav-item"><a href="/Home/PersonelUrunEkle" class="nav-link">Urun Ekleme</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+        
+        <div>
+            <div class="selectdiv">
+                <label>
+                    Ürün Markası:
+                    <select>
+                        <option value=""> Ürün markası seçiniz... </option>
+                        <option value="1">LG</option>
+                        <option value="2">Microsoft</option>
+                        <option value="3">Logitech</option>
+                        <option value="4">SteelSeries</option>
+                        <option value="5">Razer</option>
+                        <option value="6">Msi</option>
+                        <option value="7">A4tech</option>
+                        <option value="8">Corsair</option>
+                        <option value="9">Asus</option>
+                    </select>
+                </label>
+
+            </div>
+            <div class="selectdiv">
+                <label>
+                    Ürün Tipi:
+                    <select>
+                        <option value=""> Ürün tipi seçiniz... </option>
+                        <option value="1">Klavye</option>
+                        <option value="2">Fare</option>
+                        <option value="3">Kulaklık</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+       
+        <!-- END nav -->
+
+        <div class="table100 ver3 m-b-110">
+            <form action="UrunDuzenle" method="post">
+                <table data-vertable="ver3" style="width:100%">
+                    <tbody>
+                        @{
+                            if (Model != null)
+                            {
+                            <thead>
+
+                                <tr class="row100 head">
+                                    <th class="column100 column1" data-column="column1" style="width:30%">Ürün Resmi</th>
+                                    <th class="column100 column2" data-column="column2" style="width:30%">Ürün İsmi</th>
+                                    <th class="column100 column2" data-column="column2" style="width:30%">Ürün Markası</th>
+                                    <th class="column100 column2" data-column="column2" style="width:5%">Düzenle</th>
+                                    <th class="column100 column2" data-column="column2" style="width:5%">Sil</th>
+
+                                </tr>
+                            </thead>
+                            foreach (var Data in Model)
+                            {
+                                <tr>
+                                    <td class="column100 column1" data-column="column1"><img src="@Data.resimURL" height="90" width="160" /></td>
+                                    <td class="column100 column1" data-column="column1">@Data.tanim</td>
+                                    <td class="column100 column1" data-column="column1">@Data.markaID</td>
+                                    <td class="column100 column1" data-column="column1"><button class="btn btn bg-danger" type="button" onclick="UrunDuzenle(@Data.id)"></button></td>
+                                    <td class="column100 column1" data-column="column1"><button class="btn btn-close type="button"></button></td>
+
+                                </tr>
+                            }
+                        }
+                        }
+                        </tbody>
+                    </table>
+                </form>
+
+        </div>
+
+    </section>
+</body>
+</html>
+

@@ -1,9 +1,14 @@
-﻿<html>
+﻿
+@{
+    ViewBag.Title = "PersonelUyeOlma";
+}
+
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form</title>
+    <title>Personel Uye Ol</title>
     <link href="~/Content/style.css" rel="stylesheet" />
     <link href="~/Content/material-design-iconic-font.min.css" rel="stylesheet" />
     <script src="~/Scripts/bootstrap.min.js"></script>
@@ -16,8 +21,8 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Üye Ol</h2>
-                        <form method="POST" class="register-form" id="register-form" action="SignUp">
+                        <h2 class="form-title">Personel Üye Olma</h2>
+                        <form method="POST" class="register-form" id="register-form" action="PersonelUyeOlma">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="Ad" id="name" placeholder="Ad" />
@@ -34,15 +39,16 @@
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="Sifre" id="pass" placeholder="Şifre" />
                             </div>
-                           
-                            <div class="form-group form-button"><a href="/Home/SignIn"><input type="submit" name="signup" id="signup" class="form-submit" value="Üye Ol" /></a>
-                                
+
+                            <div class="form-group form-button">
+                                <a href="/Home/PersonelSignIn"><input type="submit" name="signup" id="signup" class="form-submit" value="Üye Ol" /></a>
+
                             </div>
                         </form>
                     </div>
                     <div class="signup-image">
                         <figure><img src="~/images/logo.jpg" alt="sing up image"></figure>
-                        <a href="/Home/SignIn" class="signup-image-link">Bir hesabım var</a>
+                        <a href="/Home/PersonelSignIn" class="signup-image-link">Bir hesabım var</a>
                     </div>
                 </div>
             </div>
@@ -50,4 +56,5 @@
     </div>
 </body>
 </html>
+
 

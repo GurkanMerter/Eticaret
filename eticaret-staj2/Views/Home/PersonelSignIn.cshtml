@@ -1,0 +1,62 @@
+﻿@model eticaret_staj2.Models.Personel
+@{
+    ViewBag.Title = "PersonelSignIn";
+}
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Personel SignUp</title>
+        <!-- Font Icon -->
+
+        <link href="~/Content/material-design-iconic-font.min.css" rel="stylesheet" />
+        <!-- Main css -->
+
+        <link href="~/Content/style.css" rel="stylesheet" />
+        <!-- JS -->
+
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="Scripts/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <section class="sign-in">
+                <div class="container">
+                    <div class="signin-content">
+                        <div class="signin-image">
+                            <figure><img src="~/images/logo.jpg" alt="sing up image"></figure>
+                            <a href="/Home/PersonelUyeOlma" class="signup-image-link">Bir hesap oluştur</a>
+                        </div>
+
+                        <div class="signin-form">
+                            <h2 class="form-title">Personel Girişi</h2>
+                            <form method="POST" class="register-form" id="login-form" action="PersonelSignIn">
+                                <div class="form-group">
+                                    
+                                    <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                    <input type="email" name="Eposta" id="email" placeholder="E-posta" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                    <input type="password" name="Sifre" id="your_pass" placeholder="Şifre" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                    <label for="remember-me" class="label-agree-term"><span><span></span></span>Beni Hatırla</label>
+                                </div>
+                                <div class="form-group form-button">
+                                    <input type="submit" name="signin" id="signin" class="form-submit" value="Giriş Yap" />
+
+                                </div>
+                            </form>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+    </html>
+

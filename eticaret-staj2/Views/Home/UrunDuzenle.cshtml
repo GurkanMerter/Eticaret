@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "UrunDuzenle";
+    string[] GelenUrun = new string[] { "id","tanim", "resimURL","markaID" };
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Urun Duzenleme</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link href="~/Content/urunekleme.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="testbox">
+        <form action="UrunDuzenle" method="post">
+            <div class="banner">
+                <img src="~/images/fototo.jpg" height="290px" />
+                <h1>Urun Duzenleme Formu</h1>
+            </div>
+            @{
+                if (Model != null)
+                {
+
+                    <div class="item">
+                        <p>Tanim</p>
+                        <input type="text" name="tanim" value="@Model.tanim" />
+                    </div>
+                    <div class="item">
+                        <p>Resim Url</p>
+                        <input type="text" name="resimURL" value="@Model.resimURL" />
+                    </div><div class="item">
+                        <p>MarkaID</p>
+                        <input type="text" name="markaID" value="@Model.markaID" />
+                    </div>
+                    <input type="hidden" name="id" value="@Model.id" />
+                }
+            }
+            <div class="question">
+                <div class="btn-block">
+                    <button type="submit" id="buton1">Onayla</button>
+                  <button type="button">Anasayfaya Dön </button>                   
+                </div>
+
+        </form>
+    </div>
+</body>
+</html>
+

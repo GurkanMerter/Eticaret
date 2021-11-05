@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "PersonelUrunEkle";
+
+   
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Urun Ekleme Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
+    <link href="~/Content/urunekleme.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="testbox">
+        <form action="PersonelUrunEkle" method="post">
+            <div class="banner">
+                <img src="~/images/fototo.jpg" height="290px"/>
+                <h1 >Urun Ekleme Formu</h1>
+            </div>
+          
+            <div class="item">
+                <p>Tanim</p>
+                <input type="text" name="tanim" />
+            </div>
+            <div class="item">
+                <p>Resim Url</p>
+                <input type="text" name="resimURL" />
+            </div>
+            <div class="item">
+                <div class="item">
+                    <select name="markaId">
+                        <option value="">Marka Seçiniz...</option>
+                        <option value="1">Lg</option>   
+                        <option value="2">Microsoft</option>
+                        <option value="3">Logitech</option>
+                        <option value="4">SteelSeries</option>
+                        <option value="5">Razer</option>
+                        <option value="6">MSI</option>
+                        <option value="7">A4Tech</option>
+                        <option value="8">Corsair</option>
+                        <option value="9">Asus</option>
+                    </select>
+                </div>
+            </div>
+            <div class="question">
+                <div class="btn-block">
+                    <button type="submit" href="/Home/PersonelUrunEkle">Onayla</button>
+                    <a href="/Home/PersonelYetkiliSayfa"> <button type="button">Anasayfaya Dön </button></a>               
+                </div>
+                    
+</form>
+    </div>
+</body>
+</html>
+
